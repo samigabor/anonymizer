@@ -19,7 +19,7 @@ Decentralized app which adds a layer of anonymity for peer-to-peer transfers. Us
 
 ## How to access the deployed project:
 
-- front-end hosted on [Github Pages](https://samigabor.github.io/blockchain-developer-bootcamp-final-project/)
+- front-end hosted on [Github Pages](https://samigabor.github.io/anonymizer/)
 
 - smart contract deployed on [Rospten](https://ropsten.etherscan.io/address/0xea4A6DdEd2F7341965B62E1dFe0481Dc3BD1a310#code)
 
@@ -48,8 +48,8 @@ The structure was generated running `truffle unbox react` and contains:
 
 ### Download the project:
 
-- `git clone https://github.com/samigabor/blockchain-developer-bootcamp-final-project.git`
-- `cd blockchain-developer-bootcamp-final-project`
+- `git clone https://github.com/samigabor/anonymizer.git`
+- `cd anonymizer`
 
 ### Migrate the smart contracts:
 

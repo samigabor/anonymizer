@@ -11,15 +11,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/samigabor/blockchain-developer-bootcamp-final-project.git"
+    "url": "git+https://github.com/samigabor/anonymizer.git"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/samigabor/blockchain-developer-bootcamp-final-project/issues"
+    "url": "https://github.com/samigabor/anonymizer/issues"
   },
-  "homepage": "https://github.com/samigabor/blockchain-developer-bootcamp-final-project#readme",
+  "homepage": "https://github.com/samigabor/anonymizer#readme",
   "devDependencies": {
     "@openzeppelin/contracts": "^4.3.3",
     "truffle-plugin-verify": "^0.5.18"
