@@ -72,9 +72,7 @@ class App extends Component {
   };
 
   handleTransactionHash = (hash) => {
-    const etherscanLink = `https://${getNetwork(
-      this.state.networkId
-    )}.etherscan.io/tx/${hash}`;
+    const etherscanLink = `https://ropsten.etherscan.io/tx/${hash}`;
     this.setState({
       message: {
         title: `Pending.`,
@@ -85,12 +83,10 @@ class App extends Component {
   };
 
   handleReceipt = async (receipt) => {
-    const { web3, metamaskAddress, networkId } = this.state;
+    const { web3, metamaskAddress } = this.state;
     const contractBalance = receipt.events.CurrentBalance.returnValues.balance;
     const metamaskBalance = await web3.eth.getBalance(metamaskAddress);
-    const etherscanLink = `https://${getNetwork(networkId)}.etherscan.io/tx/${
-      receipt.transactionHash
-    }`;
+    const etherscanLink = `https://ropsten.etherscan.io/tx/${receipt.transactionHash}`;
     this.setState({
       contractBalance,
       metamaskBalance,
@@ -113,10 +109,8 @@ class App extends Component {
   };
 
   handlePromise = async (result) => {
-    const { metamaskAddress, networkId, web3 } = this.state;
-    const etherscanLink = `https://${getNetwork(networkId)}.etherscan.io/tx/${
-      result.transactionHash
-    }`;
+    const { metamaskAddress, web3 } = this.state;
+    const etherscanLink = `https://ropsten.etherscan.io/tx/${result.transactionHash}`;
     const contractBalance = result.events.CurrentBalance.returnValues.balance;
     const metamaskBalance = await web3.eth.getBalance(metamaskAddress);
     this.setState({
