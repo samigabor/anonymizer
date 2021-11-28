@@ -21,7 +21,7 @@ Decentralized app which adds a layer of anonymity for peer-to-peer transfers. Us
 
 - front-end hosted on [Github Pages](https://samigabor.github.io/anonymizer/)
 
-- smart contract deployed on [Rospten](https://ropsten.etherscan.io/address/0xea4A6DdEd2F7341965B62E1dFe0481Dc3BD1a310#code)
+- smart contract deployed on [Rospten](https://ropsten.etherscan.io/address/0x5A5eb202e39ad10d75FA0183a51a37BfB5c4E592#code)
 
 ---
 
@@ -33,6 +33,17 @@ The structure was generated running `truffle unbox react` and contains:
 - `contracts`: contains the smart contract deployed to Ropsten
 - `migrations`: contains the migration files for deploying the contracts from the **contracts** directory
 - `test`: contins the test files for smart contracts
+- `secrets` folder which contains `.secrets.json` file.
+
+**WARNING:** To compile either remove Ropsten network and .secret import from truffle-config.js **OR** add your own mnemonic and infura key to secrets/.secrets.json:
+
+```
+{
+    "mnemonic": "your mnemonic seed",
+    "infuraKey": "wss://ropsten.infura.io/ws/v3/yourInfuraKey",
+    "etherscanKey": "yourEtherscanKey-ForEasyPublishAndVerify"
+}
+```
 
 ---
 
@@ -56,7 +67,9 @@ The structure was generated running `truffle unbox react` and contains:
 - `npm install` - install the smart contract dependencies at root level
 - `ganache-cli -p 8545` - start a local ethereum blockchain and simulate full client behavior
 - `truffle compile` - compile smart contracts
-- `truffle migrate` - migrate the smart contracts locally (_--network development_ is optional)
+- `truffle migrate --network development --reset` - migrate the smart contracts locally
+- `truffle migrate --network ropsten` - migrate contract to Ropsten test network
+- `truffle run verify Anonymizer --network ropsten` - publish and verify contract code on etherscan
 
 ### Start the front-end:
 
@@ -89,20 +102,19 @@ TODO
 
 ---
 
-## Public Ethereum account for certification NFT:
-
-`0xE6Cc9dFa4dD633c75c4015F02eAE456A7fC6e3D9`
+<details>
+    <summary>Future development:</summary>
+    <pre>
+        - refactor UI using react hooks
+        - implement emergency stop functionality
+        - implement upgradable contract functionality
+        - optimize gas usage
+        - automate the 2 spteps proccess (Send/Claim) into a single action made by sender.
+        - save(interact with) a hash of the user's address on the contract to avoid saving users' addresses onto the blockchain
+        - accept/display ENS domain names
+        - implement a light/dark theme
+        - deploy to Mainnet/Layer 2
+    </pre>
+</details>
 
 ---
-
-## TODO features:
-
-- refactor UI using react hooks
-- implement emergency stop functionality
-- implement upgradable contract functionality
-- optimize gas usage
-- automate the 2 spteps proccess (Send/Claim) into a single action made by sender.
-- save(interact with) a hash of the user's address on the contract to avoid saving users' addresses onto the blockchain
-- accept/display ENS domain names
-- implement a light/dark theme
-- deploy to Mainnet/Layer 2
