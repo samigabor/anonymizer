@@ -98,7 +98,7 @@ The structure was generated running `truffle unbox react` and contains:
 
 ## Screencast walking through the project
 
-TODO
+https://www.youtube.com/watch?v=J3Ek4xc3mrU
 
 ---
 
